@@ -1,17 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <router-link class="nav-link" :to="{name: 'Home'}" exact>Home</router-link>
+          </li>
+         <!-- <li>
+            <router-link class="nav-link" :to="{name: 'Products'}" exact>Products</router-link>
+          </li> -->
+          <li>
+            <router-link class="nav-link" :to="{name: 'Users'}" exact>Users</router-link>
+          </li>
+          <li>
+            <router-link class="nav-link" :to="{name: 'ProductTypeList'}" exact>Product Type</router-link>
+          </li>
+          <li><a href="#">Inventory</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <router-view></router-view>
+    </main>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+
   }
 }
 </script>
@@ -24,5 +44,24 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+.router-link-active {
+  color: #ee5566;
+}
+</style>
+<style lang="scss" scoped>
+nav {
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+   // justify-content: space-between;
+  }
 }
 </style>
